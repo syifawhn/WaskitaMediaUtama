@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('properti_order', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_properti');
-            $table->integer('jumlah_properti');
-            $table->timestamps();
+        Schema::table('profile_team', function (Blueprint $table) {
+            //
+            $table->unsignedBigInteger('divisi_id');
+            $table->foreign('divisi_id')->references('id')->on('divisi')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -24,6 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('properti_order');
+        Schema::table('profile_team', function (Blueprint $table) {
+            //
+        });
     }
 };

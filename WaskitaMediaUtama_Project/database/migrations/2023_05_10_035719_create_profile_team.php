@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('divisi_order', function (Blueprint $table) {
+        Schema::create('profile_team', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('divisi');
             $table->string('email');
-            $table->string('no_handphone');
+            $table->string('no_telp');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('divisi_order');
+        Schema::dropIfExists('profile_team');
     }
 };

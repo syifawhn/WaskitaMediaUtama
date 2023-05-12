@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orderan', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_penyelenggara');
-            $table->string('nama_event');
-            $table->date('jadwal_event');
-            $table->string('alamat_event');
-            $table->string('properti');
-            $table->string('team');
-            $table->integer('biaya');
+            $table->string('nama_role');
             $table->timestamps();
         });
     }
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orderan');
+        Schema::dropIfExists('roles');
     }
 };
